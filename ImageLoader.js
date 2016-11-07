@@ -26,7 +26,7 @@ export default class ImageLoader extends Component {
             placeholder: PropTypes.string,
             threadSize: PropTypes.number,       //only supports android
             fadeInDuration: PropTypes.number,     //only supports android
-            rowID: PropTypes.string,    //temp prop
+            rowID: PropTypes.string,    //test prop
         }).isRequired,
     }
 

@@ -122,10 +122,10 @@ public class RCTLoaderImageView extends ImageView {
         super.onWindowVisibilityChanged(visibility);
         ImageLoader imageLoader = ImageLoader.getInstance();
         if (visibility == View.VISIBLE) {
-            Log.i("VISIBLE rowID ->", String.valueOf(this.getRowID()));
+//            Log.i("VISIBLE rowID ->", String.valueOf(this.getRowID()));
             imageDisplay(imageLoader);
         } else if (visibility == View.INVISIBLE || visibility == View.GONE) {
-            Log.i("INVISIBLE rowID ->", String.valueOf(this.getRowID()));
+//            Log.i("INVISIBLE rowID ->", String.valueOf(this.getRowID()));
             imageLoader.cancelDisplayTask(this);
 //            this.setDrawingCacheEnabled(true);
 //            this.getDrawingCache().recycle();

@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/dt/react-native-smart-image-loader.svg)](https://www.npmjs.com/package/react-native-smart-image-loader)
 [![npm](https://img.shields.io/npm/l/react-native-smart-image-loader.svg)](https://github.com/react-native-component/react-native-smart-image-loader/blob/master/LICENSE)
 
-A smart image loader for React Native app.
+A smart asynchronous image downloader with cache for React Native app.
 The library uses [https://github.com/rs/SDWebImage][1] for ios, and uses [https://github.com/nostra13/Android-Universal-Image-Loader][2] for android.
 
 ## Preview

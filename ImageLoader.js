@@ -13,7 +13,6 @@ import React, {
 import {
     View,
     requireNativeComponent,
-    NativeModules,
     Platform
 } from 'react-native'
 

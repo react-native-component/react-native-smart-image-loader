@@ -19,7 +19,7 @@ RCT_EXPORT_MODULE(RCTImageLazyLoader)
     return [[RCTImageLazyLoader alloc] initWithManager:self];
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(options, NSString, RCTImageLazyLoader) {
+RCT_CUSTOM_VIEW_PROPERTY(options, NSDictionary, RCTImageLazyLoader) {
 //    NSLog(@"set src...");
     NSDictionary *options = [RCTConvert NSDictionary:json];
     NSString *src = [options objectForKey:@"src"];

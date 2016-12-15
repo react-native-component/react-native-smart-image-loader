@@ -1,6 +1,6 @@
 {
   "name": "react-native-smart-image-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A smart image loader for React Native app",
   "main": "ImageLoader.js",
   "scripts": {

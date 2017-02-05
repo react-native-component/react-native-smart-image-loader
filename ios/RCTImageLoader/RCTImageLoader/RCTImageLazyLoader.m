@@ -1,7 +1,7 @@
 
 
 #import "RCTImageLazyLoader.h"
-#import "UIView+React.h"
+#import <React/UIView+React.h>
 
 @interface RCTImageLazyLoader()
 

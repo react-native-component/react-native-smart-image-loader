@@ -1,7 +1,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import "RCTViewManager.h"
+#import <React/RCTViewManager.h>
 #import "FLAnimatedImageView.h"
 
 @class RCTImageLazyLoader;

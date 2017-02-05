@@ -1,6 +1,6 @@
 {
   "name": "react-native-smart-image-loader",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A smart image loader for React Native app",
   "main": "ImageLoader.js",
   "scripts": {
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/react-native-component/react-native-smart-image-loader/issues"
   },
-  "homepage": "https://github.com/react-native-component/react-native-smart-image-loader#readme"
+  "homepage": "https://github.com/react-native-component/react-native-smart-image-loader#readme",
+  "peerDependencies": {
+    "react-native": ">=0.40.0"
+  }
 }

@@ -31,7 +31,7 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 public class RCTLoaderImageViewManager extends SimpleViewManager<RCTLoaderImageView> {
     private static final String REACT_CLASS = "RCTLoaderImageView";//要与类名一致
     private ImageLoaderConfiguration config;
-    private DisplayImageOptions options;
+    public static DisplayImageOptions options;
     private Context context;
     /**
      * <=========================Config 变量   开始=======================>
@@ -84,7 +84,7 @@ public class RCTLoaderImageViewManager extends SimpleViewManager<RCTLoaderImageV
     /**
      * 内存缓存
      */
-    private boolean cacheInMemory = false;
+    private boolean cacheInMemory = true;
 
     /**
      * sd缓存
@@ -172,9 +172,9 @@ public class RCTLoaderImageViewManager extends SimpleViewManager<RCTLoaderImageV
 
 
         options = new DisplayImageOptions.Builder()
-                .showImageOnLoading(getSplashId(loadingImage)) //设置图片在下载期间显示的图片
-                .showImageForEmptyUri(getSplashId(emptyUriImage))//设置图片Uri为空或是错误的时候显示的图片
-                .showImageOnFail(getSplashId(failImage))  //设置图片加载/解码过程中错误时候显示的图片
+        .showImageOnLoading(getSplashId(loadingImage)) //设置图片在下载期间显示的图片
+        .showImageForEmptyUri(getSplashId(emptyUriImage))//设置图片Uri为空或是错误的时候显示的图片
+        .showImageOnFail(getSplashId(failImage))  //设置图片加载/解码过程中错误时候显示的图片
                 .cacheInMemory(cacheInMemory)//设置下载的图片是否缓存在内存中
                 .cacheOnDisc(cacheOnDisc)//设置下载的图片是否缓存在SD卡中
 //                    .considerExifParams(false)  //是否考虑JPEG图像EXIF参数（旋转，翻转）
@@ -184,8 +184,8 @@ public class RCTLoaderImageViewManager extends SimpleViewManager<RCTLoaderImageV
 //设置图片加入缓存前，对bitmap进行设置
 //.preProcessor(BitmapProcessor preProcessor)
 //                    .resetViewBeforeLoading(true)//设置图片在下载前是否重置，复位
-//                    .displayer(new RoundedBitmapDisplayer(Round))//是否设置为圆角，弧度为多少
-                .displayer(new FadeInBitmapDisplayer(fadeInDuration))//是否图片加载好后渐入的动画时间
+//                    .displayer(new RoundedBitmapDisplayer(1000))//是否设置为圆角，弧度为多少
+//                .displayer(new FadeInBitmapDisplayer(fadeInDuration))//是否图片加载好后渐入的动画时间
                 .build();//构建完成
     }
     }
@@ -335,6 +335,7 @@ public class RCTLoaderImageViewManager extends SimpleViewManager<RCTLoaderImageV
             this.fadeInDuration = map.getInt("fadeInDuration");
         }
 
+
         this.loadingImage = map.getString("placeholder");
 
         this.emptyUriImage = map.getString("placeholder");
@@ -343,8 +344,11 @@ public class RCTLoaderImageViewManager extends SimpleViewManager<RCTLoaderImageV
 
         String src = map.getString("src");
 
-        String rowID = map.getString("rowID");
-        view.setRowID(rowID);
+        if(map.hasKey("rowID")){
+            String rowID = map.getString("rowID");
+            view.setRowID(rowID);
+        }
+
 
         initConfig(context);
         initOptions();

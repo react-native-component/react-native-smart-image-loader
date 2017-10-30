@@ -25,8 +25,9 @@ RCT_CUSTOM_VIEW_PROPERTY(options, NSDictionary, RCTImageLazyLoader) {
     NSString *src = [options objectForKey:@"src"];
     NSString *placeholder =[options objectForKey:@"placeholder"];
     NSURL *url = [NSURL URLWithString:src];
+    
     if(placeholder == nil) {
-        [view sd_setImageWithURL:url];
+        [view sd_setImageWithURL:url placeholderImage:nil];
     }
     else {
         UIImage *placeholderImage = [UIImage imageNamed:placeholder];

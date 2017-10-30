@@ -41,13 +41,14 @@ public class RCTLoaderImageView extends ImageView {
 
 
     public void loaderImage(String src, DisplayImageOptions options) {
+
 /*本地图片
     String imagePath = "/mnt/sdcard/image.png";
     String imageUrl = Scheme.FILE.wrap(imagePath);*/
-        if (src != null && options != null) {
+        if (src != null) {
             ImageLoader imageLoader = ImageLoader.getInstance();
             this.src = src;
-            this.options = options;
+            this.options = RCTLoaderImageViewManager.options;
 //            imageDisplay(imageLoader);
 //        imageLoader.displayImage(src, RCTLoaderImageView.this, options);
 //        imageLoader.loadImage(src,listener);
